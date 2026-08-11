@@ -116,7 +116,7 @@ function ProjectPage() {
 
           {project.stills && project.stills.length > 0 && (
             <div className="mt-16 grid gap-8 sm:grid-cols-2">
-              {project.stills.map((s, i) => (
+              {project.stills.map((s: string, i: number) => (
                 <Reveal key={s + i} delay={i * 90}>
                   <div className="aspect-[16/9] w-full overflow-hidden bg-surface grain">
                     <img
