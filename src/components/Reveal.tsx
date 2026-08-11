@@ -47,7 +47,7 @@ export function Reveal({
 
   if (variant === "mask") {
     return (
-      <Tag ref={ref as never} className={cn("overflow-hidden", className)}>
+      <Tag ref={ref as never} className={cn("overflow-hidden pb-[0.08em]", className)}>
         <span
           className="block will-change-transform"
           style={{
