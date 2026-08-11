@@ -20,12 +20,14 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 md:items-end">
           <nav aria-label="Redes sociais" className="flex flex-wrap gap-x-6 gap-y-2">
-            {[
-              ["Instagram", site.instagram],
-              ["Vimeo", site.vimeo],
-              ["YouTube", site.youtube],
-              ["E-mail", `mailto:${site.email}`],
-            ].map(([label, href]) => (
+            {(
+              [
+                ["Instagram", site.instagram],
+                ["Vimeo", site.vimeo],
+                ["YouTube", site.youtube],
+                ["E-mail", `mailto:${site.email}`],
+              ] as const
+            ).map(([label, href]) => (
               <a
                 key={label}
                 href={href}
