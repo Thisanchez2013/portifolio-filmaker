@@ -38,7 +38,7 @@ export function Hero() {
           </p>
         </Reveal>
 
-        <h1 className="display max-w-[16ch] text-[13vw] leading-[0.9] sm:text-[10vw] lg:text-[7.4vw]">
+        <h1 className="display max-w-[16ch] whitespace-nowrap text-[9.5vw] leading-[0.95] sm:text-[9vw] lg:text-[7.2vw]">
           <Reveal variant="mask" delay={120} as="span" className="block">
             Histórias
           </Reveal>
