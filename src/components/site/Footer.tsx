@@ -3,9 +3,10 @@ import { site } from "@/data/site";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border px-5 py-14 sm:px-8">
+    <footer className="border-t border-border bg-surface px-5 py-14 sm:px-8 lg:px-12">
       <div className="mx-auto grid max-w-[1600px] gap-10 md:grid-cols-[minmax(0,1fr)_auto]">
         <div>
+          <span className="tape-strip mb-6 w-12" aria-hidden="true" />
           <p className="display text-2xl">
             {site.name}
             <span className="text-accent">.</span>
@@ -13,8 +14,8 @@ export function Footer() {
           <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             {site.role}
           </p>
-          <p className="mt-8 text-xs tracking-[0.18em] text-muted-foreground/70">
-            Available for selected projects.
+          <p className="mono-label mt-8 text-muted-foreground/70">
+            Available for selected projects
           </p>
         </div>
 
@@ -39,12 +40,8 @@ export function Footer() {
               </a>
             ))}
           </nav>
-          <p className="mt-6 text-xs tracking-[0.18em] text-muted-foreground/70">
-            {site.location}
-          </p>
-          <p className="text-xs tracking-[0.18em] text-muted-foreground/70">
-            Copyright © {year}
-          </p>
+          <p className="mono-label mt-6 text-muted-foreground/70">{site.location}</p>
+          <p className="mono-label text-muted-foreground/70">Copyright © {year}</p>
         </div>
       </div>
     </footer>

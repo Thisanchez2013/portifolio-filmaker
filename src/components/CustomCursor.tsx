@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Cursor discreto para desktop. Mostra "VIEW" / "PLAY" quando o elemento
- * sob o mouse define data-cursor.
+ * sob o mouse define data-cursor, e cresce sobre botões/links (data-cursor-grow).
  */
 export function CustomCursor() {
   const dot = useRef<HTMLDivElement>(null);
   const [label, setLabel] = useState<string | null>(null);
+  const [grow, setGrow] = useState(false);
   const [active, setActive] = useState(false);
   const [enabled, setEnabled] = useState(false);
 
@@ -27,8 +28,10 @@ export function CustomCursor() {
       x = e.clientX;
       y = e.clientY;
       setActive(true);
-      const el = (e.target as HTMLElement | null)?.closest?.("[data-cursor]");
+      const target = e.target as HTMLElement | null;
+      const el = target?.closest?.("[data-cursor]");
       setLabel(el ? el.getAttribute("data-cursor") : null);
+      setGrow(Boolean(target?.closest?.("[data-cursor-grow], a, button")) && !el);
     };
     const onLeave = () => setActive(false);
 
@@ -52,6 +55,8 @@ export function CustomCursor() {
 
   if (!enabled) return null;
 
+  const size = label ? 88 : grow ? 28 : 10;
+
   return (
     <div
       ref={dot}
@@ -60,15 +65,19 @@ export function CustomCursor() {
       style={{ opacity: active ? 1 : 0, transition: "opacity 200ms ease" }}
     >
       <div
-        className="grid place-items-center rounded-full border border-foreground/40 bg-foreground/5 backdrop-blur-[2px]"
+        className="grid place-items-center rounded-full border"
         style={{
-          width: label ? 84 : 10,
-          height: label ? 84 : 10,
-          transition: "width 300ms cubic-bezier(0.16,1,0.3,1), height 300ms cubic-bezier(0.16,1,0.3,1)",
+          width: size,
+          height: size,
+          borderColor: label || grow ? "var(--color-accent)" : "rgba(242,242,238,0.5)",
+          background: label ? "rgba(155,255,61,0.1)" : "rgba(242,242,238,0.06)",
+          backdropFilter: "blur(2px)",
+          transition:
+            "width 300ms cubic-bezier(0.16,1,0.3,1), height 300ms cubic-bezier(0.16,1,0.3,1), border-color 300ms ease, background 300ms ease",
         }}
       >
         <span
-          className="text-[10px] font-semibold tracking-[0.28em] text-foreground"
+          className="text-[10px] font-semibold tracking-[0.28em] text-accent"
           style={{ opacity: label ? 1 : 0, transition: "opacity 200ms ease" }}
         >
           {label}
