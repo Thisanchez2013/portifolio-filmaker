@@ -150,8 +150,9 @@ export const projects: Project[] = [
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
-export const getNextProject = (slug: string) => {
+export const getNextProject = (slug: string): Project => {
   const i = projects.findIndex((p) => p.slug === slug);
-  if (i === -1) return projects[0];
-  return projects[(i + 1) % projects.length];
+  const next = i === -1 ? projects[0] : projects[(i + 1) % projects.length];
+  return next as Project;
 };
+
