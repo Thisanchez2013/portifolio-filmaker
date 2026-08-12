@@ -6,7 +6,8 @@
 
 /*
  * Design system — portfólio audiovisual.
- * Base preta cinematográfica, tipografia grande, um único destaque (âmbar).
+ * Base dark em camadas (#141414 → #242424), tipografia editorial,
+ * verde "gaffer tape" como assinatura da marca, usado com parcimônia.
  */
 
 @theme inline {
@@ -16,9 +17,12 @@
   --radius-xl: 2px;
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-elevated: var(--elevated);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -31,6 +35,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-tape: var(--tape);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -40,26 +45,35 @@
 
 :root {
   --radius: 0px;
-  --background: oklch(0.14 0.004 260);
-  --foreground: oklch(0.96 0.005 90);
-  --surface: oklch(0.18 0.005 260);
-  --card: oklch(0.17 0.005 260);
-  --card-foreground: oklch(0.96 0.005 90);
-  --popover: oklch(0.16 0.005 260);
-  --popover-foreground: oklch(0.96 0.005 90);
-  --primary: oklch(0.96 0.005 90);
-  --primary-foreground: oklch(0.14 0.004 260);
-  --secondary: oklch(0.24 0.005 260);
-  --secondary-foreground: oklch(0.96 0.005 90);
-  --muted: oklch(0.22 0.005 260);
-  --muted-foreground: oklch(0.66 0.006 260);
-  --accent: oklch(0.76 0.15 62);
-  --accent-foreground: oklch(0.14 0.004 260);
+  /* Camadas de fundo — usadas para criar ritmo entre seções */
+  --background: #141414;
+  --surface: #1a1a1a;
+  --surface-2: #202020;
+  --elevated: #242424;
+
+  --foreground: #f2f2ee;
+  --muted-foreground: #a5a5a5;
+
+  --card: #242424;
+  --card-foreground: #f2f2ee;
+  --popover: #1a1a1a;
+  --popover-foreground: #f2f2ee;
+  --primary: #f2f2ee;
+  --primary-foreground: #141414;
+  --secondary: #202020;
+  --secondary-foreground: #f2f2ee;
+  --muted: #202020;
+
+  /* Assinatura: verde da fita adesiva dos equipamentos */
+  --accent: #9bff3d;
+  --accent-foreground: #141414;
+  --tape: #9bff3d;
+
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.76 0.15 62);
+  --destructive-foreground: #f2f2ee;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #9bff3d;
 }
 
 @layer base {
@@ -104,6 +118,14 @@
   color: var(--color-muted-foreground);
 }
 
+/* Numeração / timecodes cinematográficos */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
 /* Linha que cresce no hover — usada em links e itens de serviço */
 @utility underline-grow {
   position: relative;
@@ -114,7 +136,7 @@
     bottom: -4px;
     height: 1px;
     width: 100%;
-    background: currentColor;
+    background: var(--color-accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -123,6 +145,34 @@
   &:focus-visible::after {
     transform: scaleX(1);
   }
+}
+
+/* Faixa verde inclinada atrás de uma palavra — conceito "fita adesiva" */
+@utility tape-word {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -0.16em;
+    right: -0.16em;
+    bottom: 0.06em;
+    height: 0.34em;
+    background: var(--color-tape);
+    opacity: 0.9;
+    transform: rotate(-1.4deg);
+  }
+}
+
+/* Pequena fita verde solta (decorativa) */
+@utility tape-strip {
+  display: block;
+  height: 6px;
+  background: var(--color-tape);
+  transform: rotate(-2.2deg);
+  opacity: 0.9;
 }
 
 /* Grão de filme muito discreto sobre imagens grandes */
@@ -136,6 +186,22 @@
     opacity: 0.14;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Vinheta cinematográfica */
+@utility vignette {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 90% at 50% 45%,
+      transparent 35%,
+      rgba(0, 0, 0, 0.45) 78%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
   }
 }
 
@@ -163,6 +229,61 @@
 
 @utility marquee {
   animation: scroll-x 38s linear infinite;
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@utility scroll-hint {
+  animation: scroll-hint 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes rec-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@utility rec-dot {
+  animation: rec-blink 1.6s steps(1, end) infinite;
+}
+
+/* CTA com preenchimento verde entrando lateralmente */
+@utility btn-wipe {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.35s ease, border-color 0.35s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--color-accent);
+    transform: translateX(-101%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent-foreground);
+    border-color: var(--color-accent);
+  }
+  &:hover::before,
+  &:focus-visible::before {
+    transform: translateX(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
