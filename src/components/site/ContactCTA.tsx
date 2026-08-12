@@ -5,15 +5,25 @@ export function ContactCTA() {
   return (
     <section
       id="contato"
-      className="relative border-t border-border px-5 py-28 sm:px-8 sm:py-40"
+      className="relative bg-background px-5 py-24 sm:px-8 sm:py-32 lg:px-12 lg:py-40"
     >
       <div className="mx-auto max-w-[1600px]">
-        <Reveal variant="mask" as="h2" className="display text-[13vw] leading-[0.9] sm:text-[9vw] lg:text-[6.4vw]">
-          Vamos criar
+        <Reveal>
+          <div className="flex items-center gap-4">
+            <span className="mono-label text-accent">07</span>
+            <span className="h-px flex-1 bg-border" />
+            <span className="mono-label text-muted-foreground">Contato</span>
+          </div>
         </Reveal>
-        <Reveal variant="mask" as="h2" delay={90} className="display text-[13vw] leading-[0.9] text-muted-foreground/40 sm:text-[9vw] lg:text-[6.4vw]">
-          algo juntos?
-        </Reveal>
+
+        <h2 className="display mt-10 text-[13vw] leading-[0.9] sm:text-[9vw] lg:text-[6.4vw]">
+          <Reveal variant="mask" as="span" className="block">
+            Vamos criar
+          </Reveal>
+          <Reveal variant="mask" as="span" delay={90} className="block text-foreground/35">
+            algo <span className="tape-word text-foreground">juntos</span>?
+          </Reveal>
+        </h2>
 
         <Reveal delay={200}>
           <p className="mt-10 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -28,15 +38,23 @@ export function ContactCTA() {
               href={whatsappLink}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center bg-accent px-8 py-4 text-xs uppercase tracking-[0.22em] text-accent-foreground transition-opacity hover:opacity-85"
+              data-cursor-grow="true"
+              className="group inline-flex items-center justify-center gap-3 border border-accent bg-accent px-8 py-4 text-xs uppercase tracking-[0.22em] text-accent-foreground transition-opacity duration-300 hover:opacity-85"
             >
               Falar no WhatsApp
+              <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">
+                ↗
+              </span>
             </a>
             <a
               href={`mailto:${site.email}`}
-              className="inline-flex items-center justify-center border border-border px-8 py-4 text-xs uppercase tracking-[0.22em] transition-colors hover:border-foreground"
+              data-cursor-grow="true"
+              className="btn-wipe group inline-flex items-center justify-center gap-3 border border-border px-8 py-4 text-xs uppercase tracking-[0.22em]"
             >
               Enviar um e-mail
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
             </a>
           </div>
         </Reveal>
