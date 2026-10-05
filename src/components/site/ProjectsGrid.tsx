@@ -9,22 +9,14 @@ export function ProjectsGrid({ limit }: { limit?: number }) {
   const [filter, setFilter] = useState<string>("Todos");
 
   const visible = useMemo(() => {
-    const list =
-      filter === "Todos" ? projects : projects.filter((p) => p.category === filter);
+    const list = filter === "Todos" ? projects : projects.filter((p) => p.category === filter);
     return limit ? list.slice(0, limit) : list;
   }, [filter, limit]);
 
   return (
-    <section
-      id="work"
-      className="bg-background px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36"
-    >
+    <section id="work" className="bg-background px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
       <div className="mx-auto max-w-[1600px]">
-        <SectionIntro
-          index="01"
-          title="Selected Work"
-          meta={`${projects.length} projetos`}
-        />
+        <SectionIntro index="01" title="Selected Work" meta={`${projects.length} projetos`} />
 
         <Reveal delay={120}>
           <div
@@ -41,9 +33,7 @@ export function ProjectsGrid({ limit }: { limit?: number }) {
                 onClick={() => setFilter(c)}
                 className={cn(
                   "relative py-1 text-xs uppercase tracking-[0.2em] transition-colors",
-                  filter === c
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground",
+                  filter === c ? "text-accent" : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {c}
@@ -76,8 +66,7 @@ export function ProjectsGrid({ limit }: { limit?: number }) {
                   : pattern === 3
                     ? "lg:col-span-7"
                     : "lg:col-span-5";
-              const offset =
-                pattern === 4 ? "lg:mt-28" : pattern === 2 ? "lg:mt-20" : "";
+              const offset = pattern === 4 ? "lg:mt-28" : pattern === 2 ? "lg:mt-20" : "";
               return (
                 <Reveal key={p.slug} delay={(i % 2) * 90} className={cn(span, offset)}>
                   <ProjectCard

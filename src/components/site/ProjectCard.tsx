@@ -11,12 +11,7 @@ type Props = {
   index?: string;
 };
 
-export function ProjectCard({
-  project,
-  aspect = "cinema",
-  priority = false,
-  index,
-}: Props) {
+export function ProjectCard({ project, aspect = "cinema", priority = false, index }: Props) {
   return (
     <Link
       to="/work/$slug"

@@ -21,10 +21,7 @@ export function Showreel() {
   }, [open]);
 
   return (
-    <section
-      id="showreel"
-      className="bg-background px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36"
-    >
+    <section id="showreel" className="bg-background px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
       <div className="mx-auto max-w-[1600px]">
         <SectionIntro index="04" title="Play the Reel" meta="Showreel 2026 · 01:48" />
 
@@ -95,8 +92,7 @@ export function Showreel() {
                 <p className="eyebrow">Showreel</p>
                 <p className="max-w-md px-6 text-sm text-muted-foreground">
                   Adicione a URL do vídeo em <code>src/data/site.ts</code> (campo
-                  <span className="text-accent"> showreelUrl</span>) para o player entrar
-                  no ar.
+                  <span className="text-accent"> showreelUrl</span>) para o player entrar no ar.
                 </p>
               </div>
             )}

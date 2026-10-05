@@ -8,10 +8,7 @@ export function About() {
   const parallax = useParallax<HTMLImageElement>(30);
 
   return (
-    <section
-      id="sobre"
-      className="bg-surface px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36"
-    >
+    <section id="sobre" className="bg-surface px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
       <div className="mx-auto max-w-[1600px]">
         <SectionIntro index="02" title="Behind the camera" meta="About" />
 
@@ -46,17 +43,17 @@ export function About() {
             <Reveal delay={140}>
               <div className="max-w-xl space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 <p>
-                  Sou {site.name}, filmmaker e editor de vídeos apaixonado por
-                  transformar ideias, momentos e marcas em histórias visuais.
+                  Sou {site.name}, filmmaker e editor de vídeos apaixonado por transformar ideias,
+                  momentos e marcas em histórias visuais.
                 </p>
                 <p>
-                  Da captação à edição final, desenvolvo projetos que unem narrativa,
-                  estética e estratégia para criar conteúdos que realmente conectam.
+                  Da captação à edição final, desenvolvo projetos que unem narrativa, estética e
+                  estratégia para criar conteúdos que realmente conectam.
                 </p>
                 <p className="text-foreground/80">
                   E sim — se você encontrar uma{" "}
-                  <span className="tape-word text-accent-foreground">fita verde</span> em
-                  cada equipamento, é assinatura minha.
+                  <span className="tape-word text-accent-foreground">fita verde</span> em cada
+                  equipamento, é assinatura minha.
                 </p>
               </div>
             </Reveal>
@@ -68,10 +65,7 @@ export function About() {
                   ["Status", "Available for projects"],
                   ["Foco", "Events · Brands · Films"],
                 ].map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="border-b border-border py-5 sm:border-b-0 sm:pr-6"
-                  >
+                  <div key={k} className="border-b border-border py-5 sm:border-b-0 sm:pr-6">
                     <dt className="eyebrow">{k}</dt>
                     <dd className="mt-2 text-sm text-foreground">{v}</dd>
                   </div>

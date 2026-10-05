@@ -60,8 +60,8 @@ export function Hero() {
         <div className="mt-10 grid gap-8 border-t border-border pt-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
           <Reveal delay={340}>
             <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Filmmaker &amp; Video Editor criando filmes, campanhas e conteúdos que
-              transformam ideias em experiências visuais.
+              Filmmaker &amp; Video Editor criando filmes, campanhas e conteúdos que transformam
+              ideias em experiências visuais.
             </p>
           </Reveal>
 

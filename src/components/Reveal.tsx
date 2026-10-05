@@ -68,8 +68,7 @@ export function Reveal({
       className={cn("will-change-transform", className)}
       style={{
         opacity: shown ? 1 : 0,
-        transform:
-          variant === "fade" ? undefined : shown ? "translateY(0)" : "translateY(28px)",
+        transform: variant === "fade" ? undefined : shown ? "translateY(0)" : "translateY(28px)",
         transition: `opacity 0.9s ease ${delay}ms, transform 1s cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
       }}
     >

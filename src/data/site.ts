@@ -28,8 +28,7 @@ export const services = [
   {
     index: "01",
     title: "Filmmaking",
-    description:
-      "Captação audiovisual para marcas, empresas, eventos e projetos criativos.",
+    description: "Captação audiovisual para marcas, empresas, eventos e projetos criativos.",
   },
   {
     index: "02",
@@ -46,14 +45,12 @@ export const services = [
   {
     index: "04",
     title: "Events",
-    description:
-      "Cobertura audiovisual de eventos, festas, experiências e ativações de marca.",
+    description: "Cobertura audiovisual de eventos, festas, experiências e ativações de marca.",
   },
   {
     index: "05",
     title: "Commercial",
-    description:
-      "Produções audiovisuais para campanhas, produtos e posicionamento de marca.",
+    description: "Produções audiovisuais para campanhas, produtos e posicionamento de marca.",
   },
   {
     index: "06",
@@ -77,14 +74,12 @@ export const clients = [
 /** Placeholders — substituir por depoimentos reais. */
 export const testimonials = [
   {
-    quote:
-      "Conseguiu transformar nossa ideia em algo muito maior do que imaginávamos.",
+    quote: "Conseguiu transformar nossa ideia em algo muito maior do que imaginávamos.",
     author: "Nome do cliente",
     company: "Empresa",
   },
   {
-    quote:
-      "Entregou um filme com uma sensibilidade de imagem que elevou toda a campanha.",
+    quote: "Entregou um filme com uma sensibilidade de imagem que elevou toda a campanha.",
     author: "Nome do cliente",
     company: "Agência",
   },

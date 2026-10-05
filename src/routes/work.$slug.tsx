@@ -14,10 +14,7 @@ export const Route = createFileRoute("/work/$slug")({
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [
-          { title: "Projeto não encontrado" },
-          { name: "robots", content: "noindex" },
-        ],
+        meta: [{ title: "Projeto não encontrado" }, { name: "robots", content: "noindex" }],
       };
     }
     const p = loaderData.project;
@@ -114,10 +111,7 @@ function ProjectPage() {
                     height={900}
                     className="h-[110%] w-full object-cover will-change-transform"
                   />
-                  <span
-                    data-cursor="PLAY"
-                    className="absolute inset-0 grid place-items-center"
-                  >
+                  <span data-cursor="PLAY" className="absolute inset-0 grid place-items-center">
                     <span className="mono-label grid h-20 w-20 place-items-center rounded-full border border-foreground/40 bg-background/30 backdrop-blur-sm sm:h-28 sm:w-28">
                       Play
                     </span>

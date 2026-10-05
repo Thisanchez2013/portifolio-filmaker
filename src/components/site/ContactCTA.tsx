@@ -27,8 +27,8 @@ export function ContactCTA() {
 
         <Reveal delay={200}>
           <p className="mt-10 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Se você tem uma ideia, evento, campanha ou história para contar, vamos
-            transformar isso em filme.
+            Se você tem uma ideia, evento, campanha ou história para contar, vamos transformar isso
+            em filme.
           </p>
         </Reveal>
 
@@ -52,9 +52,7 @@ export function ContactCTA() {
               className="btn-wipe group inline-flex items-center justify-center gap-3 border border-border px-8 py-4 text-xs uppercase tracking-[0.22em]"
             >
               Enviar um e-mail
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
         </Reveal>

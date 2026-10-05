@@ -8,10 +8,7 @@ export function Services() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section
-      id="servicos"
-      className="bg-surface-2 px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36"
-    >
+    <section id="servicos" className="bg-surface-2 px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
       <div className="mx-auto max-w-[1600px]">
         <SectionIntro index="03" title="O que eu faço" meta="Services" />
 

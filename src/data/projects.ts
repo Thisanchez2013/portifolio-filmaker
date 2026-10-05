@@ -155,4 +155,3 @@ export const getNextProject = (slug: string): Project => {
   const next = i === -1 ? projects[0] : projects[(i + 1) % projects.length];
   return next as Project;
 };
-

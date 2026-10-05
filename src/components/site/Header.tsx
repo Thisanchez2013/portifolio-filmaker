@@ -120,9 +120,7 @@ export function Header() {
                 }}
               >
                 <span className="mono-label shrink-0 text-accent">{l.n}</span>
-                <span className="display text-[12vw] leading-none text-foreground">
-                  {l.label}
-                </span>
+                <span className="display text-[12vw] leading-none text-foreground">{l.label}</span>
               </Link>
             ))}
           </nav>
