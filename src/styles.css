@@ -218,19 +218,6 @@
   animation: slow-zoom 24s ease-in-out infinite alternate;
 }
 
-@keyframes scroll-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@utility marquee {
-  animation: scroll-x 38s linear infinite;
-}
-
 @keyframes scroll-hint {
   0% {
     transform: translateY(-100%);

@@ -10,7 +10,7 @@ export function ContactCTA() {
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
           <div className="flex items-center gap-4">
-            <span className="mono-label text-accent">07</span>
+            <span className="mono-label text-accent">05</span>
             <span className="h-px flex-1 bg-border" />
             <span className="mono-label text-muted-foreground">Contato</span>
           </div>

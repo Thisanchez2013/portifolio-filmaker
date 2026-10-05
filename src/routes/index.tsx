@@ -4,8 +4,6 @@ import { ProjectsGrid } from "@/components/site/ProjectsGrid";
 import { About } from "@/components/site/About";
 import { Services } from "@/components/site/Services";
 import { Showreel } from "@/components/site/Showreel";
-import { Clients } from "@/components/site/Clients";
-import { Testimonials } from "@/components/site/Testimonials";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { site } from "@/data/site";
 
@@ -53,8 +51,6 @@ function Index() {
       <About />
       <Services />
       <Showreel />
-      <Clients />
-      <Testimonials />
       <ContactCTA />
     </main>
   );

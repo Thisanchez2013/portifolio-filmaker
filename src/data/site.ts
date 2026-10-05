@@ -58,34 +58,3 @@ export const services = [
     description: "Color grading, sound design, motion e finalização audiovisual.",
   },
 ];
-
-/** Placeholders visuais — substituir pelos clientes reais. */
-export const clients = [
-  "Nike",
-  "Adidas",
-  "Red Bull",
-  "Samsung",
-  "Porsche",
-  "Spotify",
-  "Netflix",
-  "Local Brand",
-];
-
-/** Placeholders — substituir por depoimentos reais. */
-export const testimonials = [
-  {
-    quote: "Conseguiu transformar nossa ideia em algo muito maior do que imaginávamos.",
-    author: "Nome do cliente",
-    company: "Empresa",
-  },
-  {
-    quote: "Entregou um filme com uma sensibilidade de imagem que elevou toda a campanha.",
-    author: "Nome do cliente",
-    company: "Agência",
-  },
-  {
-    quote: "Do briefing à finalização, um processo leve e absurdamente preciso.",
-    author: "Nome do cliente",
-    company: "Marca",
-  },
-];
