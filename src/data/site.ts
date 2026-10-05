@@ -5,17 +5,13 @@
  * ---------------------------------------------------------------------------
  */
 export const site = {
-  name: "Rafael Moura",
-  shortName: "RM",
+  name: "Jefte Dias",
   role: "Filmmaker & Video Editor",
-  location: "São Paulo · Brasil",
-  email: "contato@seudominio.com",
+  location: "Indaiatuba, SP · Brasil",
   // Apenas números, formato internacional (55 + DDD + número)
-  whatsapp: "5511999999999",
+  whatsapp: "5519996676529",
   whatsappMessage: "Olá! Vi seu portfólio e gostaria de um orçamento.",
-  instagram: "https://instagram.com/",
-  vimeo: "https://vimeo.com/",
-  youtube: "https://youtube.com/",
+  instagram: "https://www.instagram.com/_jefteoliveira2/",
   // Showreel: cole aqui a URL do vídeo (mp4) quando tiver o arquivo definitivo.
   showreelUrl: "",
 } as const;

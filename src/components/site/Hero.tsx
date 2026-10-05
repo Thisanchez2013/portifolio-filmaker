@@ -44,7 +44,7 @@ export function Hero() {
         <Reveal variant="fade" delay={100}>
           <p className="eyebrow mb-5 text-foreground/70">
             Filmmaker <span className="mx-2 text-accent">·</span> Video Editor
-            <span className="mx-2 text-accent">·</span> Brazil
+            <span className="mx-2 text-accent">·</span> {site.location}
           </p>
         </Reveal>
 

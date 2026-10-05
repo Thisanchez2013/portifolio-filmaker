@@ -46,24 +46,12 @@ export function ContactCTA() {
                 ↗
               </span>
             </a>
-            <a
-              href={`mailto:${site.email}`}
-              data-cursor-grow="true"
-              className="btn-wipe group inline-flex items-center justify-center gap-3 border border-border px-8 py-4 text-xs uppercase tracking-[0.22em]"
-            >
-              Enviar um e-mail
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </a>
           </div>
         </Reveal>
 
         <Reveal delay={340}>
           <div className="mt-14 flex flex-wrap gap-x-8 gap-y-3">
-            {[
-              ["Instagram", site.instagram],
-              ["Vimeo", site.vimeo],
-              ["YouTube", site.youtube],
-            ].map(([label, href]) => (
+            {[["Instagram", site.instagram]].map(([label, href]) => (
               <a
                 key={label}
                 href={href}

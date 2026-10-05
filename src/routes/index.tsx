@@ -31,7 +31,6 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           name: site.name,
           jobTitle: site.role,
-          email: `mailto:${site.email}`,
           address: { "@type": "PostalAddress", addressCountry: "BR" },
         }),
       },

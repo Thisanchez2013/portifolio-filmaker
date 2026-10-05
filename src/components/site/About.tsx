@@ -61,7 +61,7 @@ export function About() {
             <Reveal delay={240}>
               <dl className="mt-14 grid grid-cols-1 gap-px border-t border-border sm:grid-cols-3">
                 {[
-                  ["Base", "Based in Brazil"],
+                  ["Base", site.location],
                   ["Status", "Available for projects"],
                   ["Foco", "Events · Brands · Films"],
                 ].map(([k, v]) => (
