@@ -29,6 +29,7 @@ export type Project = {
   thumbnail: string;
   /** URL de vídeo (mp4). Vazio = usa apenas a imagem como placeholder. */
   video?: string;
+  orientation?: "landscape" | "portrait";
   description: string;
   roles: string[];
   /** Frames / stills adicionais */

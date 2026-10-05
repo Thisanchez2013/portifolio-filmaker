@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 import { Reveal } from "@/components/Reveal";
 import { ContactCTA } from "@/components/site/ContactCTA";
 import { useParallax } from "@/hooks/use-parallax";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/work/$slug")({
 function ProjectPage() {
   const { project, next } = Route.useLoaderData();
   const heroParallax = useParallax<HTMLImageElement>(26);
+  const isPortrait = project.orientation === "portrait";
 
   return (
     <main key={project.slug} className="animate-fade-in pt-28 sm:pt-32">
@@ -92,31 +94,35 @@ function ProjectPage() {
         {/* Vídeo principal — placeholder com poster até o arquivo final */}
         <Reveal delay={120} className="mt-14 px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-[1600px]">
-            <div className="relative aspect-video w-full overflow-hidden bg-elevated grain">
+            <div
+              className={cn(
+                "relative w-full overflow-hidden bg-elevated grain",
+                isPortrait ? "mx-auto aspect-[9/16] max-w-[min(28rem,45svh)]" : "aspect-video",
+              )}
+            >
               {project.video ? (
                 <video
-                  className="h-full w-full object-cover"
+                  className={cn("h-full w-full", isPortrait ? "object-contain" : "object-cover")}
                   src={project.video}
                   poster={project.thumbnail}
+                  preload="metadata"
                   controls
                   playsInline
                 />
               ) : (
-                <>
-                  <img
-                    ref={heroParallax}
-                    src={project.thumbnail}
-                    alt={`Frame principal de ${project.title}`}
-                    width={1600}
-                    height={900}
-                    className="h-[110%] w-full object-cover will-change-transform"
-                  />
-                  <span data-cursor="PLAY" className="absolute inset-0 grid place-items-center">
-                    <span className="mono-label grid h-20 w-20 place-items-center rounded-full border border-foreground/40 bg-background/30 backdrop-blur-sm sm:h-28 sm:w-28">
-                      Play
-                    </span>
-                  </span>
-                </>
+                <img
+                  ref={isPortrait ? undefined : heroParallax}
+                  src={project.thumbnail}
+                  alt={`Frame principal de ${project.title}`}
+                  width={1600}
+                  height={900}
+                  className={cn(
+                    "w-full",
+                    isPortrait
+                      ? "h-full object-contain"
+                      : "h-[110%] object-cover will-change-transform",
+                  )}
+                />
               )}
             </div>
           </div>
